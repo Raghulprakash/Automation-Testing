@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class AmazonSpecificProduct {
 
-	public static void main(String[] args){
+	public static void main(String[] args) throws InterruptedException{
 		    System.setProperty("webdriver.chrome.driver", "F:\\selenium\\chromedriver_win32\\chromedriver.exe");
 		    WebDriver driver = new ChromeDriver();
 		    driver.get("https://www.amazon.in/");
@@ -29,12 +29,13 @@ public class AmazonSpecificProduct {
 				driver.switchTo().window(newwindows);
 			}
 			
-//			WebElement ProductChange = driver.findElement(By.xpath("//*[@id='a-autoid-12-announce']"));
-//			ProductChange.click();
-//			
-//			WebElement ColorChange = driver.findElement(By.xpath("//*[@alt='Blue']"));
-//			ColorChange.click();
-
+			WebElement ProductChange = driver.findElement(By.xpath("//*[@id='a-autoid-12-announce']"));
+			ProductChange.click();
+			Thread.sleep(4000);
+			
+			WebElement ColorChange = driver.findElement(By.xpath("//*[@alt='Blue']"));
+			ColorChange.click();
+			Thread.sleep(4000);
 			
 			WebElement AddCart = driver.findElement(By.id("add-to-cart-button"));
 			AddCart.click();
